@@ -1,0 +1,65 @@
+---
+title: "Python In Rstudio"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Prepare system
+
+I will be working with the retigulate package but when doing this,
+
+Python will be used in a python environment.
+without intervention it will be build in the root of your system `Sys.getenv("HOME")`.
+This is not generally desirable, thus it can be changed by changing the .Renvironment.
+
+Open the r_environment file with: `usethis::edit_r_environ()` 
+Set the `WORKON_HOME` property to what you want.
+
+```{r, eval=FALSE}
+WORKON_HOME = "Path/To/Desired/Folder"
+```
+
+You can also choose your desired version of python.
+Currently my system uses the version of python in the r-retigulate directory automatically created by the package.
+But you can change the default behaviour using:
+
+```{r, eval=FALSE}
+#https://stackoverflow.com/questions/49738564/r-set-environment-variable-permanently
+RETICULATE_PYTHON = "/usr/local/bin/python3"
+```
+
+I do not know how this work alongside the python interpreter selection in the global options.
+
+## download package.
+
+To use Python in R studio you create a python environment.
+On my personal pc it was enough to download the `reticulate` package.
+
+```{r, eval=FALSE}
+install.packages("retigulate")
+reticulate::repl_python()
+```
+
+Now you are in python.
+
+### .py
+
+When working in .py files the package will automatically take over.
+(in my experience so far)
+
+## Further reading
+
+The current set up allows for python in r studio, but a lot more information is availeble [here](https://rstudio.github.io/reticulate/index.html "Github page Retigulate").
+
+The package is way more powerful then shown till now.
+For example it is able to:
+
+- run python in r scripts.
+- Convert objects from one language to the other. 
+- be added to packages,
+- implemented in R markdown.
