@@ -80,6 +80,11 @@ git_branch_delete("revert_xlsx_csv")
 
 git_reset_soft()
 #changes back to a previous commit, but does not change anything in the files.
-#Thus it will keep all changes in git pane
+#and keeps staged items staged
 
 git_reset_mixed()
+#changes back to a previous commit, but does not change anything in the files.
+#unstages items staged
+
+git_reset_hard()
+#just simply deletes EVERYTHING that was added after that point.
