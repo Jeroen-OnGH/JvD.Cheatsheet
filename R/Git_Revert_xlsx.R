@@ -77,3 +77,9 @@ git_branch_delete("revert_xlsx_csv")
 #veel te ingewikkeld.
 #maar goed dat er naar is gekeken.
 #we gaan gewoon door met git reset.
+
+git_reset_soft()
+#changes back to a previous commit, but does not change anything in the files.
+#Thus it will keep all changes in git pane
+
+git_reset_mixed()
