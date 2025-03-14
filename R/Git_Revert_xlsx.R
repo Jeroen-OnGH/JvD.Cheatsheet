@@ -38,6 +38,14 @@ xlsx::write.xlsx(Revert_Data,"data-raw/Revert_Data.xlsx")
 git_add(".")
 git_commit("Verandering 2")
 
+#Resultaten bekijken
+git_log(ref = "revert_xlsx_csv",max = 3)
+
+read.csv2("data-raw/Revert_Data.csv")
+xlsx::read.xlsx2("data-raw/Revert_Data.xlsx",sheetIndex = 1)
+
+git_reset_soft()
+
 #Opschonen
 
 git_add(".")
