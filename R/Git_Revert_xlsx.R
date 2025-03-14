@@ -78,6 +78,11 @@ git_branch_delete("revert_xlsx_csv")
 #maar goed dat er naar is gekeken.
 #we gaan gewoon door met git reset.
 
+Test <- 1
+git_add(".")
+git_commit("test om terug te resetten")
+git_push()
+
 git_reset_soft()
 #changes back to a previous commit, but does not change anything in the files.
 #and keeps staged items staged
